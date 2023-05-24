@@ -1,0 +1,92 @@
+
+.search-navbar {
+    width: 100%;
+    padding: 25px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(98, 153, 255, 0.4);
+
+    label {
+        font-size: 1.2rem;
+        font-weight: 400;
+    }
+
+    input {
+        width: 275px;
+        padding: 5px 15px;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+    }
+
+    button {
+        margin-left: 10px;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 15px;
+        background-color: rgb(42, 117, 255);
+        color: white;
+        font-weight: 600;
+
+        &:hover {
+            cursor: pointer;
+            background-color: rgb(13, 84, 217);
+        }
+
+    }
+
+}
+
+.all-videogames {
+    h2 {
+        margin-top: 20px;
+    }
+}
+
+.pagination-container {
+    width: 100%;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    
+    .pagination {
+        gap: 10px;
+
+        button {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: none;
+            background-color: rgb(235, 235, 235);
+            font-weight: 600;
+
+            &:hover {
+                cursor: pointer;
+                background-color: rgb(42, 117, 255);
+                color: white;
+            }
+
+        }
+
+    }
+
+}
+
+@media (max-width: 425px) {
+
+    .search-navbar {
+
+        .search-input-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+
+    }
+
+}

@@ -1,0 +1,61 @@
+
+
+.detail {
+
+    .carousel-detail {
+        height: 48vh;
+        margin: 30px 0 50px;
+
+        .carousel-control-prev-icon {
+            background-color: black;
+        }
+
+        .carousel-control-next-icon {
+            background-color: black;
+        }
+
+        img {
+            max-height: 50vh;
+            object-fit: contain;
+        }
+
+    }
+}
+
+.data-detail {
+    width: 90vw;
+    margin-left: 80px;
+
+    .console-detail {
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: gray;
+        margin-bottom: 30px;
+    }
+
+    .description-detail {
+        margin-bottom: 30px;
+    }
+
+}
+
+
+@media (max-width: 425px) { 
+
+    .detail {
+
+        .carousel-detail {
+            height: 23vh;
+    
+            img {
+                height: 150px;
+            }
+    
+        }
+    }
+
+    .data-detail {
+        margin-left: 15px;
+    }
+
+}

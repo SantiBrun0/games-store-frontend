@@ -1,0 +1,13 @@
+// Import all of Bootstrap's CSS
+@import "bootstrap/scss/bootstrap";
+
+@import './components/header';
+@import './components/footer';
+@import './pages/home';
+@import './components/card';
+@import './pages/videogames';
+@import './pages/orders';
+@import './components/cart';
+@import './components/productCart';
+@import './pages/purchase';
+@import './pages/detail';

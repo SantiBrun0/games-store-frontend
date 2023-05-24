@@ -1,0 +1,38 @@
+
+
+.logo {
+    img {
+        width: 40px;
+    }
+}
+
+a {
+    color: rgb(225, 225, 225) !important;
+    text-decoration: none !important;
+    margin-right: 10px !important;
+    padding: 0px !important;
+
+    &:hover {
+        color: white;
+    }
+}
+
+.dropdown-menu.show {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+
+    .link-console {
+        width: 100%;
+        color: black !important;
+        margin-right: 0px !important;
+        padding: 0 40px 0 20px !important;
+    
+        &:hover {
+            background-color: rgba(59, 128, 255, 0.4);
+        }
+    
+    }
+}

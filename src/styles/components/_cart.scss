@@ -1,0 +1,38 @@
+
+.total-price {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 3px solid black;
+}
+
+.btn-clean-cart, .btn-buy {
+    margin-left: 15px;
+    padding: 5px 15px;
+    border: none;
+    background-color: rgb(210, 19, 19);
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all ease 0.3s;
+
+    &:hover {
+        cursor: pointer;
+        color: white;
+        transform: scale(1.01);
+        background-color: rgb(155, 3, 3);
+    }
+}
+
+.btn-buy {
+    background-color: rgb(40, 144, 255);
+
+    &:hover {
+        background-color: rgb(10, 129, 255);
+    }
+
+    &:active {
+        background-color: rgba(10, 128, 255, 0.6);
+    }
+
+}

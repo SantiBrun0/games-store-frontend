@@ -1,0 +1,84 @@
+
+.card {
+    padding: 10px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 560px;
+
+    .image {
+        height: 260px;
+        padding: 5px 0px;
+    }
+
+    .data-container {
+
+        .name {
+            margin-bottom: 0;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .console {
+            color: gray;
+            margin-bottom: 10px;
+        }
+    }
+
+    .description {
+        margin-bottom: 0;
+    }
+
+    .link-ver-mas {
+        color: gray !important;
+        margin: 0.5rem 0 1rem;
+        align-self: flex-end;
+    }
+
+    .price-container {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-bottom: 8px;
+
+        .price, .stock {
+            background-color: rgb(228, 228, 228);
+            padding: 5px 8px;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+    }
+
+    .btn-add {
+        border: none;
+        background-color: rgb(40, 144, 255);
+        border-radius: 5px;
+        color: white;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all ease 0.3s;
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.02);
+            background-color: rgb(10, 129, 255);
+        }
+
+        &:active {
+            background-color: rgba(10, 128, 255, 0.4);
+        }
+
+    }
+
+    .btn-disabled {
+        background-color: #CCCCCC;
+        color: #999999;
+        cursor: not-allowed;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+}
