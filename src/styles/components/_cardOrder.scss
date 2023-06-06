@@ -1,0 +1,14 @@
+
+.card-order {
+    width: 575px;
+    padding: 10px 20px;
+    border: 2px solid whitesmoke;
+    border-radius: 10px;
+}
+
+
+@media (max-width: 425px) {
+    .card-order {
+        width: 375px;
+    }
+}
