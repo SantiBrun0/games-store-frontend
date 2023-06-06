@@ -10,11 +10,19 @@ const Xbox = () => {
   const [page, setPage] = useState(1)
   const [totalPages, setTotalPages] = useState(0)
 
-  const { addToCart } = useContextGlobal()
+  const { addToCart, ipRequest } = useContextGlobal()
 
   const getAllGames = async () => {
-    const url = `http://localhost:8080/videogame/console/xbox/page/${page - 1}`
-    const res = await fetch(url)
+    const URL = `http://${ipRequest}:8080/videogame/console/xbox/page/${page - 1}`
+    const config = {
+      headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, OPTIONS',
+      'Access-Control-Allow-Headers':'*',
+      }
+    };
+    const res = await fetch(URL, config)
     const data = await res.json()
     setTotalPages(data.totalPages)
     setAllGames(data.content)

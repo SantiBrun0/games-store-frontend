@@ -2,13 +2,23 @@ import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from 'react-bootstrap';
 import CardConsole from "../components/CardConsole";
 import Spinner from 'react-bootstrap/Spinner';
+import { useContextGlobal } from "../components/utils/ContextGlobal";
 const Consoles = () => {
 
   const [consoles, setConsoles] = useState([])
+  const { ipRequest } = useContextGlobal()
 
   const getAllConsoles = async () => {
-    const url = `http://localhost:8080/console`
-    const res = await fetch(url)
+    const URL = `http://${ipRequest}:8080/console`
+    const config = {
+      headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, OPTIONS',
+      'Access-Control-Allow-Headers':'*',
+      }
+    };
+    const res = await fetch(URL, config)
     const data = await res.json()
     setConsoles(data)
   }

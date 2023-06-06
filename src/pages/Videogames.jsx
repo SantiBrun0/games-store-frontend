@@ -13,11 +13,19 @@ const Videogames = () => {
   const [totalPages, setTotalPages] = useState(0)
   const [gameSearch, setGameSearch] = useState('')
 
-  const { addToCart } = useContextGlobal()
+  const { addToCart, ipRequest } = useContextGlobal()
 
   const getAllGames = async () => {
-    const url = `http://localhost:8080/videogame/page/${page - 1}`
-    const res = await fetch(url)
+    const URL = `http://${ipRequest}:8080/videogame/page/${page - 1}`
+    const config = {
+      headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, OPTIONS',
+      'Access-Control-Allow-Headers':'*',
+      }
+    };
+    const res = await fetch(URL, config)
     const data = await res.json()
     setTotalPages(data.totalPages)
     setAllGames(data.content)
@@ -25,8 +33,16 @@ const Videogames = () => {
 
   const getGameByName = async (name) => {
     try {
-      const url = `http://localhost:8080/videogame/name/${name}`
-      const res = await fetch(url);
+      const URL = `http://${ipRequest}:8080/videogame/name/${name}`
+      const config = {
+        headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, OPTIONS',
+        'Access-Control-Allow-Headers':'*',
+        }
+      };
+      const res = await fetch(URL, config);
       
       if (!res.ok) {
         toast.error('El videojuego no existe :(')

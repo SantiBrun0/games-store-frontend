@@ -2,16 +2,27 @@ import React, { useState } from "react";
 import toast, { Toaster } from 'react-hot-toast';
 import CardOrder from "../components/CardOrder";
 import Spinner from 'react-bootstrap/Spinner';
+import { useContextGlobal } from "../components/utils/ContextGlobal";
 
 const Orders = () => {
 
   const [orderSearch, setOrderSearch] = useState('0')
   const [order, setOrder] = useState()
 
+  const { ipRequest } = useContextGlobal()
+
   const getOrder= async (code) => {
     try {
-      const url = `http://localhost:8080/order/${code}`
-      const res = await fetch(url);
+      const URL = `http://${ipRequest}:8080/order/${code}`
+      const config = {
+        headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, OPTIONS',
+        'Access-Control-Allow-Headers':'*',
+        }
+      };
+      const res = await fetch(URL, config);
       
       if (!res.ok) {
         toast.error('La orden no existe :(')

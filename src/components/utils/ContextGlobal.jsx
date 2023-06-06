@@ -40,13 +40,21 @@ const ContextProvider = ({ children }) => {
   }
 
 
-  const ipRequest = ''
+  const ipRequest = '18.218.146.105'
 
   const [gamesHome, setGamesHome] = useState([])
 
   const getGamesHome = async () => {
-    const url = 'http://localhost:8080/videogame/random'
-    const res = await fetch(url)
+    const URL = `http://${ipRequest}:8080/videogame/random`
+    const config = {
+      headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, OPTIONS',
+      'Access-Control-Allow-Headers':'*',
+      }
+    };
+    const res = await fetch(URL, config)
     const data = await res.json()
     setGamesHome(data)
   }
@@ -59,12 +67,15 @@ const ContextProvider = ({ children }) => {
     const config = {
         method: 'POST',
         headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, OPTIONS',
+        'Access-Control-Allow-Headers':'*',
         },
         body: JSON.stringify(payload)
     };
 
-    const URL = `http://localhost:8080/order`;
+    const URL = `http://${ipRequest}:8080/order`;
   
     try {
       const response = await fetch(URL, config);
@@ -80,10 +91,16 @@ const ContextProvider = ({ children }) => {
 
   const sellVideogame = async (id, sale) => {
     const config = {
-      method: 'PUT'
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, OPTIONS',
+        'Access-Control-Allow-Headers':'*',
+      }
     };
 
-    const URL = `http://localhost:8080/videogame/sell?id=${id}&sale=${sale}`;
+    const URL = `http://${ipRequest}:8080/videogame/sell?id=${id}&sale=${sale}`;
 
     try {
       const response = await fetch(URL, config);
