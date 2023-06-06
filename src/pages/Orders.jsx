@@ -59,7 +59,10 @@ const Orders = () => {
         {
           (!order) ?
           <>
-            <span>Esperando codigo</span><Spinner animation="border" variant="primary" />
+            <div className="wait-code">
+              <span>Introduzca un tracking code en la barra buscadora y haga click en BUSCAR para ver el detalle de una orden</span>
+              <Spinner animation="border" variant="primary" />
+            </div>
           </>
           :
           <CardOrder data={order} />
