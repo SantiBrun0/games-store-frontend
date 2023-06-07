@@ -36,3 +36,19 @@ a {
     
     }
 }
+
+
+.cart-button {
+
+    .cart-number {
+        position: absolute;
+        font-size: 12px;
+        font-weight: 700;
+        bottom: 7px;
+        right: 5%;
+        background-color: red;
+        padding: 1px 6px;
+        border-radius: 50%;
+    }
+
+}

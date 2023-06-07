@@ -87,13 +87,19 @@ const Header = () => {
             <Link to={"/orders"}>Ordenes</Link>
         </Nav>
 
-          <Button variant="primary" onClick={handleShow} className="me-2" disabled={location.pathname == '/purchase'}>
+          <Button variant="primary" onClick={handleShow} className="me-2 cart-button" disabled={location.pathname == '/purchase'}>
             <i
               className="bx bxs-cart"
               style={{
                 fontSize: "2rem",
               }}
             />
+            {
+              (cart.length > 0) ?
+                <div className="cart-number">{cart.length}</div>
+              :
+              ''
+            }
           </Button>
           <Offcanvas show={show} onHide={handleClose} placement="end">
             <Offcanvas.Header closeButton>
